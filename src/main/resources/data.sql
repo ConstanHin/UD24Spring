@@ -1,5 +1,4 @@
-
-DROP table IF EXISTS empleados;
+--DROP table IF EXISTS empleados;
 
 create table empleados(
 	id int auto_increment,
