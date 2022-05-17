@@ -1,10 +1,10 @@
-package qwerty.dao;
+package crud.dao;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import qwerty.dto.Empleado;
+import crud.dto.Empleado;
 
 public interface IEmpleadoDAO extends JpaRepository<Empleado, Long>{
 	

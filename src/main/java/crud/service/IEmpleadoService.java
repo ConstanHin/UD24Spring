@@ -1,8 +1,8 @@
-package qwerty.service;
+package crud.service;
 
 import java.util.List;
 
-import qwerty.dto.Empleado;
+import crud.dto.Empleado;
 
 public interface IEmpleadoService {
 	

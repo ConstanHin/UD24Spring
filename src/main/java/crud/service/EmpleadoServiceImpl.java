@@ -1,12 +1,12 @@
-package qwerty.service;
+package crud.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import qwerty.dao.IEmpleadoDAO;
-import qwerty.dto.Empleado;
+import crud.dao.IEmpleadoDAO;
+import crud.dto.Empleado;
 
 @Service
 public class EmpleadoServiceImpl implements IEmpleadoService {

@@ -1,4 +1,4 @@
-package qwerty.dto;
+package crud.dto;
 
 import java.util.Date;
 

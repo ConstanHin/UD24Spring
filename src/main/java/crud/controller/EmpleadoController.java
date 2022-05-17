@@ -1,4 +1,4 @@
-package qwerty.controller;
+package crud.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import qwerty.dto.Empleado;
-import qwerty.service.EmpleadoServiceImpl;
+import crud.dto.Empleado;
+import crud.service.EmpleadoServiceImpl;
 
 @RestController
 @RequestMapping("/api")
