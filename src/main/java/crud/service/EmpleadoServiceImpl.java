@@ -38,7 +38,6 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 
 	@Override
 	public Empleado actualizarEmpleado(Empleado empleado) {
-		// Equivocado?
 		return iEmpleadoDAO.save(empleado);
 	}
 
@@ -52,4 +51,10 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 		return iEmpleadoDAO.findByTrabajo(trabajo);
 	}
 
+	@Override
+	public List<Empleado> listarEmpleadosApellido(String apellido) {
+		// TODO Auto-generated method stub
+		return iEmpleadoDAO.findByApellido(apellido);
+	}
+	
 }

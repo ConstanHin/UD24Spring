@@ -8,8 +8,11 @@ import crud.dto.Empleado;
 
 public interface IEmpleadoDAO extends JpaRepository<Empleado, Long>{
 	
-	//Listar empleados por campo nombre
+	// Listar empleados por campo nombre
 	public List<Empleado> findByNombre(String nombre);
+	
+	// Listar empleados por el campo apellido
+	public List<Empleado> findByApellido(String apellido);
 	
 	// Listar empleados por campo trabajo
 	public List<Empleado> findByTrabajo(String trabajo);

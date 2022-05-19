@@ -22,30 +22,69 @@ public class EmpleadoController {
 	@Autowired
 	EmpleadoServiceImpl empleadoServiceImpl;
 	
-	// Listar todos los empleados
+	/**
+	 * Listar todos los empleados
+	 * 
+	 * @return
+	 */
 	@GetMapping("/empleados")
 	public List<Empleado> listarEmpleados() {
 		return empleadoServiceImpl.listarEmpleados();
 	}
 	
-	// Listar empleados por el campo nombre
+	/**
+	 *  Listar empleados por el campo nombre
+	 * @param nombre
+	 * @return
+	 */
 	@GetMapping("/empleados/nombre/{nombre}")
 	public List<Empleado> listarEmpleadosNombre(@PathVariable(name="nombre") String nombre) {
 		return empleadoServiceImpl.listarEmpleadosNombre(nombre);
 	}
 	
-	//Listar empleador por el campo trabajo
+	/**
+	 * Listar empleados por el campo apellido
+	 * 
+	 * @param apellido
+	 * @return
+	 */
+	@GetMapping("/empleados/apellido/{apellido}")
+	public List<Empleado> listarEmpleadosApellido(@PathVariable(name="apellido") String apellido) {
+		return empleadoServiceImpl.listarEmpleadosApellido(apellido);
+	}
+	
+	/**
+	 * Listar empleador por el campo trabajo
+	 * @param trabajo
+	 * @return
+	 */
 	@GetMapping("/empleados/trabajo/{trabajo}")
 	public List<Empleado> listarEmpeadosTrabajo(@PathVariable(name="trabajo") String trabajo){
 		return empleadoServiceImpl.listarEmpleadosTrabajo(trabajo);
 	}
 	
-	// Guardar empleado
+	/**
+	 *  Guardar empleado
+	 *  
+	 * @param empleado
+	 * @return
+	 */
 	@PostMapping("/empleados")
 	public Empleado guardarEmpleado(@RequestBody Empleado empleado) {
+		
+		// Settear el string del trabajao y la cantidad del salario segun el Enumerable "Trabajo.java"
+		empleado.setTrabajo(Trabajo.getTrabajo(empleado.getTrabajoEnum()));
+		empleado.setSalario(Trabajo.getSalario(empleado.getTrabajoEnum()));
+		
 		return empleadoServiceImpl.guardarEmpleado(empleado);		
 	}
 	
+	/**
+	 * Obtener por id
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@GetMapping("/empleado/{id}")
 	public Empleado empleadoPorId(@PathVariable(name="id")Long id) {
 		
@@ -58,6 +97,13 @@ public class EmpleadoController {
 		return empleado;
 	}
 	
+	/**
+	 * Actualizar por id
+	 * 
+	 * @param id
+	 * @param empleado
+	 * @return
+	 */
 	@PutMapping("/empleado/{id}")
 	public Empleado actualizarEmpleado(@PathVariable(name="id")Long id, @RequestBody Empleado empleado) {
 		Empleado empleado_seleccionado = new Empleado();
@@ -74,8 +120,12 @@ public class EmpleadoController {
 		return empleado_actualizado;
 	}
 	
-	// Delete
-	
+
+	/**
+	 * Eliminar por id
+	 * 
+	 * @param id
+	 */
 	@DeleteMapping("/empleado/{id}")
 	public void eliminarEmpleado(@PathVariable(name ="id") Long id) {
 		empleadoServiceImpl.eliminarEmpleado(id);

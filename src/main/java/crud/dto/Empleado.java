@@ -19,8 +19,10 @@ public class Empleado {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nombre;
+	private String apellido;
 	private String trabajo;
 	private int salario;
+	private Trabajo trabajoEnum;
 
 	
 	//Construcor
@@ -28,11 +30,12 @@ public class Empleado {
 		
 	}
 
-	public Empleado(Long id, String nombre, Trabajo trabajo) {
+	public Empleado(Long id, String nombre, String apellido, Trabajo trabajoEnum) {
 		this.id = id;
 		this.nombre = nombre;
-		this.trabajo = Trabajo.getTrabajo(trabajo);
-		this.salario = Trabajo.getSalario(trabajo);
+		this.apellido = apellido;
+		this.trabajo = Trabajo.getTrabajo(trabajoEnum);
+		this.salario = Trabajo.getSalario(trabajoEnum);
 	}
 
 	// Getters setters
@@ -52,6 +55,8 @@ public class Empleado {
 		this.nombre = nombre;
 	}
 	
+	
+	
 	public String getTrabajo() {
 		return trabajo;
 	}
@@ -66,6 +71,22 @@ public class Empleado {
 
 	public void setSalario(int salario) {
 		this.salario = salario;
+	}
+	
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public Trabajo getTrabajoEnum() {
+		return trabajoEnum;
+	}
+
+	public void setTrabajoEnum(Trabajo trabajoEnum) {
+		this.trabajoEnum = trabajoEnum;
 	}
 
 	@Override

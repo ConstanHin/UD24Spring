@@ -23,6 +23,10 @@ public interface IEmpleadoService {
 	
 	public List<Empleado> listarEmpleadosNombre(String nombre);
 	
+	// Listar empleados por el campo apellido
+	
+	public List<Empleado> listarEmpleadosApellido(String apellido);
+	
 	// Listar empleados por el campo trabajo
 	public List<Empleado> listarEmpleadosTrabajo(String trabajo);
 	
