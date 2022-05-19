@@ -73,8 +73,8 @@ public class EmpleadoController {
 	public Empleado guardarEmpleado(@RequestBody Empleado empleado) {
 		
 		// Settear el string del trabajao y la cantidad del salario segun el Enumerable "Trabajo.java"
-		empleado.setTrabajo(Trabajo.getTrabajo(empleado.getTrabajoEnum()));
-		empleado.setSalario(Trabajo.getSalario(empleado.getTrabajoEnum()));
+		empleado.setTrabajo(TrabajoEnum.getTrabajo(empleado.getTrabajoEnum()));
+		empleado.setSalario(TrabajoEnum.getSalario(empleado.getTrabajoEnum()));
 		
 		return empleadoServiceImpl.guardarEmpleado(empleado);		
 	}

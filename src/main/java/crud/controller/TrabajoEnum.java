@@ -1,6 +1,6 @@
 package crud.controller;
 
-public enum Trabajo {
+public enum TrabajoEnum {
 
 	PROGRAMMER, GRAPHIC_DESIGNER, TESTER, UX_DESIGN;
 
@@ -9,7 +9,7 @@ public enum Trabajo {
 	 * @param trabajo
 	 * @return
 	 */
-	public static int getSalario(Trabajo trabajo) {
+	public static int getSalario(TrabajoEnum trabajo) {
 
 		switch (trabajo) {
 		case PROGRAMMER:
@@ -35,7 +35,7 @@ public enum Trabajo {
 	 * @param trabajo
 	 * @return
 	 */
-	public static String getTrabajo(Trabajo trabajo) {
+	public static String getTrabajo(TrabajoEnum trabajo) {
 		
 		switch (trabajo) {
 		case PROGRAMMER:
