@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import crud.controller.Trabajo;
+
 @Entity
 @Table(name="empleados")
 public class Empleado {
@@ -18,7 +20,7 @@ public class Empleado {
 	private Long id;
 	private String nombre;
 	private String trabajo;
-	private String salario;
+	private int salario;
 
 	
 	//Construcor
@@ -26,15 +28,12 @@ public class Empleado {
 		
 	}
 
-	public Empleado(Long id, String nombre, String trabajo, String salario) {
-		super();
+	public Empleado(Long id, String nombre, Trabajo trabajo) {
 		this.id = id;
 		this.nombre = nombre;
-		this.trabajo = trabajo;
-		this.salario = salario;
+		this.trabajo = Trabajo.getTrabajo(trabajo);
+		this.salario = Trabajo.getSalario(trabajo);
 	}
-
-
 
 	// Getters setters
 	public Long getId() {
@@ -61,11 +60,11 @@ public class Empleado {
 		this.trabajo = trabajo;
 	}
 
-	public String getSalario() {
+	public int getSalario() {
 		return salario;
 	}
 
-	public void setSalario(String salario) {
+	public void setSalario(int salario) {
 		this.salario = salario;
 	}
 
