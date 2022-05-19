@@ -28,7 +28,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 
 	@Override
 	public Empleado empleadoPorID(Long id) {
-		return iEmpleadoDAO.getById(id);
+		return iEmpleadoDAO.findById(id).get();
 	}
 
 	@Override

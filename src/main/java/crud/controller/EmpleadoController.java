@@ -88,13 +88,13 @@ public class EmpleadoController {
 	@GetMapping("/empleado/{id}")
 	public Empleado empleadoPorId(@PathVariable(name="id")Long id) {
 		
-		Empleado empleado = new Empleado();
+		Empleado empleadoPorID = new Empleado();
 		
-		empleado = empleadoServiceImpl.empleadoPorID(id);
+		empleadoPorID = empleadoServiceImpl.empleadoPorID(id);
 		
-		System.out.println("Empleado por id: " + empleado);
+		System.out.println("empleadoPorID: "+empleadoPorID);
 		
-		return empleado;
+		return empleadoPorID;
 	}
 	
 	/**

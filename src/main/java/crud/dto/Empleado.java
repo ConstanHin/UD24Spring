@@ -25,7 +25,7 @@ public class Empleado {
 	private TrabajoEnum trabajoEnum;
 
 	
-	//Construcor
+	//Constructor
 	public Empleado() {
 		
 	}
