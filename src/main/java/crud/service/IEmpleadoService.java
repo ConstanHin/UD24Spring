@@ -23,6 +23,9 @@ public interface IEmpleadoService {
 	
 	public List<Empleado> listarEmpleadosNombre(String nombre);
 	
+	// Listar empleados por el campo trabajo
+	public List<Empleado> listarEmpleadosTrabajo(String trabajo);
+	
 	// UPDATE actualizar datos del empleado
 	
 	public Empleado actualizarEmpleado(Empleado empleado);

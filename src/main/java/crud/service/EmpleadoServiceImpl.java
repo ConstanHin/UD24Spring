@@ -11,10 +11,11 @@ import crud.dto.Empleado;
 @Service
 public class EmpleadoServiceImpl implements IEmpleadoService {
 
-	//Utilizamos los metodos de la interface IEmpleadoDAO, es como si instaciaramos.
+	// Utilizamos los metodos de la interface IEmpleadoDAO, es como si
+	// instaciaramos.
 	@Autowired
 	IEmpleadoDAO iEmpleadoDAO;
-	
+
 	@Override
 	public List<Empleado> listarEmpleados() {
 		return iEmpleadoDAO.findAll();
@@ -43,7 +44,12 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 
 	@Override
 	public void eliminarEmpleado(Long id) {
-		iEmpleadoDAO.deleteById(id);;
+		iEmpleadoDAO.deleteById(id);
+	}
+
+	@Override
+	public List<Empleado> listarEmpleadosTrabajo(String trabajo) {
+		return iEmpleadoDAO.findByTrabajo(trabajo);
 	}
 
 }

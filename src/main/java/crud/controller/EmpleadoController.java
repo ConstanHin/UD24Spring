@@ -22,7 +22,7 @@ public class EmpleadoController {
 	@Autowired
 	EmpleadoServiceImpl empleadoServiceImpl;
 	
-	// Listar todos los clientes
+	// Listar todos los empleados
 	@GetMapping("/empleados")
 	public List<Empleado> listarEmpleados() {
 		return empleadoServiceImpl.listarEmpleados();
@@ -32,6 +32,12 @@ public class EmpleadoController {
 	@GetMapping("/empleados/nombre/{nombre}")
 	public List<Empleado> listarEmpleadosNombre(@PathVariable(name="nombre") String nombre) {
 		return empleadoServiceImpl.listarEmpleadosNombre(nombre);
+	}
+	
+	//Listar empleador por el campo trabajo
+	@GetMapping("/empleados/trabajo/{trabajo}")
+	public List<Empleado> listarEmpeadosTrabajo(@PathVariable(name="trabajo") String trabajo){
+		return empleadoServiceImpl.listarEmpleadosTrabajo(trabajo);
 	}
 	
 	// Guardar empleado
@@ -60,10 +66,6 @@ public class EmpleadoController {
 		empleado_seleccionado = empleadoServiceImpl.empleadoPorID(id);
 		
 		empleado_seleccionado.setNombre(empleado.getNombre());
-		empleado_seleccionado.setApellido(empleado.getApellido());
-		empleado_seleccionado.setDireccion(empleado.getDireccion());
-		empleado_seleccionado.setDni(empleado.getDni());
-		empleado_seleccionado.setFecha(empleado.getFecha());
 		
 		empleado_actualizado = empleadoServiceImpl.actualizarEmpleado(empleado_seleccionado);
 		

@@ -1,16 +1,14 @@
---DROP table IF EXISTS empleados;
+--DROP table IF EXISTS empleados2;
 
 create table empleados(
 	id int auto_increment,
-	nombre varchar(250),
-	apellido varchar(250),
-	direccion varchar(250),
-	dni integer,
-	fecha date
+	nombre varchar(255),
+	trabajo varchar(100),
+	salario int,
 );
 
-insert into empleados (nombre, apellido,direccion,dni,fecha)values('Jose','Marin','calle imaginaria 1',123456789, NOW());
-insert into empleados (nombre, apellido,direccion,dni,fecha)values('Juan','Lopez','calle imaginaria 2',122222222, NOW());
-insert into empleados (nombre, apellido,direccion,dni,fecha)values('Pedro','Guillem','calle imaginaria 3',123333333, NOW());
-insert into empleados (nombre, apellido,direccion,dni,fecha)values('Jordi','Martin','calle imaginaria 4',123444444, NOW());
-insert into empleados (nombre, apellido,direccion,dni,fecha)values('Jonatan','Vicente','calle imaginaria 5',123455555, NOW());
+insert into empleados (nombre,trabajo,salario)values('Jose Cnstan','programmer', 40000);
+insert into empleados (nombre,trabajo,salario)values('Juan Constn','graphic designer', 50000);
+insert into empleados (nombre,trabajo,salario)values('Pedro Consan','programmer', 40000);
+insert into empleados (nombre,trabajo,salario)values('Jordi Cnstan','testing', 41500);
+insert into empleados (nombre,trabajo,salario)values('Jonatan Cont','UX Designer', 39999));

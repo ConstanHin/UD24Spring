@@ -12,39 +12,29 @@ import javax.persistence.Table;
 @Table(name="empleados")
 public class Empleado {
 	
-	// Attributos
+	// Attributes
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	//nombre, apellido,direccion,dni,fecha
 	private String nombre;
-	private String apellido;
-	private String direccion;
-	private int dni;
-	private Date fecha;
+	private String trabajo;
+	private String salario;
+
 	
 	//Construcor
 	public Empleado() {
 		
 	}
 
-	/**
-	 * 
-	 * @param id
-	 * @param nombre
-	 * @param apellido
-	 * @param direccion
-	 * @param dni
-	 * @param fecha
-	 */
-	public Empleado(Long id, String nombre, String apellido, String direccion, int dni, Date fecha) {
+	public Empleado(Long id, String nombre, String trabajo, String salario) {
+		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.apellido = apellido;
-		this.direccion = direccion;
-		this.dni = dni;
-		this.fecha = fecha;
+		this.trabajo = trabajo;
+		this.salario = salario;
 	}
+
+
 
 	// Getters setters
 	public Long getId() {
@@ -62,45 +52,27 @@ public class Empleado {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public String getApellido() {
-		return apellido;
+	
+	public String getTrabajo() {
+		return trabajo;
 	}
 
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setTrabajo(String trabajo) {
+		this.trabajo = trabajo;
 	}
 
-	public String getDireccion() {
-		return direccion;
+	public String getSalario() {
+		return salario;
 	}
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public int getDni() {
-		return dni;
-	}
-
-	public void setDni(int dni) {
-		this.dni = dni;
-	}
-
-	public Date getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
+	public void setSalario(String salario) {
+		this.salario = salario;
 	}
 
 	@Override
 	public String toString() {
-		return "Empleado [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", direccion=" + direccion
-				+ ", dni=" + dni + ", fecha=" + fecha + "]";
+		return "Empleado [id=" + id + ", nombre=" + nombre + ", trabajo=" + trabajo + ", salario=" + salario + "]";
 	}
-	
-	
+
 
 }

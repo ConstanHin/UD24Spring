@@ -10,5 +10,8 @@ public interface IEmpleadoDAO extends JpaRepository<Empleado, Long>{
 	
 	//Listar empleados por campo nombre
 	public List<Empleado> findByNombre(String nombre);
+	
+	// Listar empleados por campo trabajo
+	public List<Empleado> findByTrabajo(String trabajo);
 
 }
