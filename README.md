@@ -1,6 +1,6 @@
 # UD24Spring
 
-Programa de gestión de empleados donde se le asignara al empleado, dependiendo del trabajo, un salario de forma automática. 
+Proyecto API REST con Spring, de gestión de empleados donde se implementa el CRUD y se le asignará al empleado, dependiendo del trabajo, un salario de forma automática. 
 
 
 ## CRUD
